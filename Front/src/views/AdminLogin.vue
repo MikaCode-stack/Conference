@@ -45,7 +45,7 @@ async function handleLogin() {
   <div class="flex min-h-screen items-center justify-center px-5">
     <div class="w-full max-w-sm rounded-2xl bg-white p-8 shadow-sm dark:bg-gray-900">
       <div class="mb-6 text-center">
-        <h2 class="font-heading text-2xl font-medium text-violet-700 dark:text-violet-400">
+        <h2 class="font-heading text-2xl font-medium text-red-700 dark:text-red-400">
           Admin Portal
         </h2>
         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Sign in to access your dashboard</p>
@@ -92,7 +92,7 @@ async function handleLogin() {
         <button
           type="submit"
           :disabled="isLoading"
-          class="mt-2 rounded bg-violet-600 px-3 py-2 text-sm font-medium text-white hover:bg-violet-700 disabled:opacity-60 dark:bg-violet-500 dark:hover:bg-violet-400"
+          class="mt-2 rounded bg-red-600 px-3 py-2 text-sm font-medium text-white hover:bg-red-700 disabled:opacity-60 dark:bg-red-500 dark:hover:bg-red-400"
         >
           {{ isLoading ? 'Signing in…' : 'Sign in' }}
         </button>

@@ -10,10 +10,10 @@ import { findLiveAndUpcoming } from '../sessionStatus.js'
 const REFRESH_INTERVAL_MS = 5000
 
 const conference = {
-  name: 'IOYZSF 2026',
-  tagline: 'Youth at the lead.',
-  dates: '29/11 - 04/12, 2026',
-  location: 'Port Louis, Mauritius',
+  name: 'Camp Annuel',
+  tagline: 'Village de la fraternite',
+  dates: '04/08 - 08/08, 2026',
+  location: 'Palmar, Mauritius',
 }
 
 const sessions = ref([])

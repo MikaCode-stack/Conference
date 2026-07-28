@@ -53,7 +53,7 @@ const progress = computed(() => {
   <section class="px-5 py-8" aria-labelledby="agenda-heading">
     <h2
       id="agenda-heading"
-      class="mb-4 font-heading text-2xl font-medium text-violet-700 dark:text-violet-400"
+      class="mb-4 font-heading text-2xl font-medium text-red-700 dark:text-red-400"
     >
       Schedule
     </h2>
@@ -66,7 +66,7 @@ const progress = computed(() => {
         class="shrink-0 basis-32 rounded-xl px-4 py-3 text-center transition sm:flex-1"
         :class="
           day === activeDay
-            ? 'bg-violet-600 text-white'
+            ? 'bg-red-600 text-white'
             : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700'
         "
         @click="activeDay = day"

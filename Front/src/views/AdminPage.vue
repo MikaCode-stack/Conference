@@ -76,10 +76,10 @@ async function removeAnnouncement(id) {
 
 <template>
   <div class="px-5 py-8 text-left">
-    <h1 class="mb-8 font-heading text-3xl font-medium text-violet-700 dark:text-violet-400">Admin</h1>
+    <h1 class="mb-8 font-heading text-3xl font-medium text-red-700 dark:text-red-400">Admin</h1>
 
     <section class="mb-10" aria-labelledby="sessions-heading">
-      <h2 id="sessions-heading" class="mb-2 font-heading text-2xl font-medium text-violet-700 dark:text-violet-400">
+      <h2 id="sessions-heading" class="mb-2 font-heading text-2xl font-medium text-red-700 dark:text-red-400">
         Sessions
       </h2>
 
@@ -119,7 +119,7 @@ async function removeAnnouncement(id) {
         />
         <button
           type="submit"
-          class="rounded bg-violet-600 px-3 py-1 text-sm font-medium text-white hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-400"
+          class="rounded bg-red-600 px-3 py-1 text-sm font-medium text-white hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-400"
         >
           Add session
         </button>
@@ -129,32 +129,32 @@ async function removeAnnouncement(id) {
         <thead>
           <tr>
             <th
-              class="border-b border-gray-200 p-2 text-left font-medium text-violet-700 dark:border-gray-800 dark:text-violet-400"
+              class="border-b border-gray-200 p-2 text-left font-medium text-red-700 dark:border-gray-800 dark:text-red-400"
             >
               Day
             </th>
             <th
-              class="border-b border-gray-200 p-2 text-left font-medium text-violet-700 dark:border-gray-800 dark:text-violet-400"
+              class="border-b border-gray-200 p-2 text-left font-medium text-red-700 dark:border-gray-800 dark:text-red-400"
             >
               Time
             </th>
             <th
-              class="border-b border-gray-200 p-2 text-left font-medium text-violet-700 dark:border-gray-800 dark:text-violet-400"
+              class="border-b border-gray-200 p-2 text-left font-medium text-red-700 dark:border-gray-800 dark:text-red-400"
             >
               Title
             </th>
             <th
-              class="border-b border-gray-200 p-2 text-left font-medium text-violet-700 dark:border-gray-800 dark:text-violet-400"
+              class="border-b border-gray-200 p-2 text-left font-medium text-red-700 dark:border-gray-800 dark:text-red-400"
             >
               Speaker
             </th>
             <th
-              class="border-b border-gray-200 p-2 text-left font-medium text-violet-700 dark:border-gray-800 dark:text-violet-400"
+              class="border-b border-gray-200 p-2 text-left font-medium text-red-700 dark:border-gray-800 dark:text-red-400"
             >
               Location
             </th>
             <th
-              class="border-b border-gray-200 p-2 text-left font-medium text-violet-700 dark:border-gray-800 dark:text-violet-400"
+              class="border-b border-gray-200 p-2 text-left font-medium text-red-700 dark:border-gray-800 dark:text-red-400"
             >
               Tag
             </th>
@@ -203,7 +203,7 @@ async function removeAnnouncement(id) {
             <td class="border-b border-gray-200 p-2 whitespace-nowrap dark:border-gray-800">
               <button
                 type="button"
-                class="mr-2 rounded bg-violet-600 px-2 py-1 text-xs font-medium text-white hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-400"
+                class="mr-2 rounded bg-red-600 px-2 py-1 text-xs font-medium text-white hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-400"
                 @click="saveSession(session)"
               >
                 Save
@@ -224,7 +224,7 @@ async function removeAnnouncement(id) {
     <section aria-labelledby="announcements-heading">
       <h2
         id="announcements-heading"
-        class="mb-2 font-heading text-2xl font-medium text-violet-700 dark:text-violet-400"
+        class="mb-2 font-heading text-2xl font-medium text-red-700 dark:text-red-400"
       >
         Announcements
       </h2>
@@ -248,7 +248,7 @@ async function removeAnnouncement(id) {
         </label>
         <button
           type="submit"
-          class="rounded bg-violet-600 px-3 py-1 text-sm font-medium text-white hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-400"
+          class="rounded bg-red-600 px-3 py-1 text-sm font-medium text-white hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-400"
         >
           Add announcement
         </button>
@@ -258,17 +258,17 @@ async function removeAnnouncement(id) {
         <thead>
           <tr>
             <th
-              class="border-b border-gray-200 p-2 text-left font-medium text-violet-700 dark:border-gray-800 dark:text-violet-400"
+              class="border-b border-gray-200 p-2 text-left font-medium text-red-700 dark:border-gray-800 dark:text-red-400"
             >
               Variant
             </th>
             <th
-              class="border-b border-gray-200 p-2 text-left font-medium text-violet-700 dark:border-gray-800 dark:text-violet-400"
+              class="border-b border-gray-200 p-2 text-left font-medium text-red-700 dark:border-gray-800 dark:text-red-400"
             >
               Message
             </th>
             <th
-              class="border-b border-gray-200 p-2 text-left font-medium text-violet-700 dark:border-gray-800 dark:text-violet-400"
+              class="border-b border-gray-200 p-2 text-left font-medium text-red-700 dark:border-gray-800 dark:text-red-400"
             >
               Visible
             </th>
@@ -298,7 +298,7 @@ async function removeAnnouncement(id) {
             <td class="border-b border-gray-200 p-2 whitespace-nowrap dark:border-gray-800">
               <button
                 type="button"
-                class="mr-2 rounded bg-violet-600 px-2 py-1 text-xs font-medium text-white hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-400"
+                class="mr-2 rounded bg-red-600 px-2 py-1 text-xs font-medium text-white hover:bg-red-700 dark:bg-red-500 dark:hover:bg-red-400"
                 @click="saveAnnouncement(announcement)"
               >
                 Save

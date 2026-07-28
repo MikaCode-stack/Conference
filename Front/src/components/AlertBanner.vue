@@ -13,14 +13,14 @@ defineEmits(['dismiss'])
     class="flex items-center gap-3 border-b border-gray-200 px-5 py-3 dark:border-gray-800"
     :class="
       variant === 'live'
-        ? 'bg-violet-600/10 dark:bg-violet-400/10'
+        ? 'bg-red-600/10 dark:bg-red-400/10'
         : 'bg-gray-100 dark:bg-gray-800'
     "
     role="status"
     aria-live="polite"
   >
     <span
-      class="rounded bg-violet-600 px-2 py-0.5 text-xs font-semibold text-white dark:bg-violet-400 dark:text-gray-950"
+      class="rounded bg-red-600 px-2 py-0.5 text-xs font-semibold text-white dark:bg-red-400 dark:text-gray-950"
     >
       {{ variant === 'live' ? 'Live' : 'Reminder' }}
     </span>
