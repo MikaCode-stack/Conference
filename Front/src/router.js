@@ -4,7 +4,7 @@ import AdminPage from './views/AdminPage.vue'
 import AdminLogin from './views/AdminLogin.vue'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     { path: '/', name: 'Agenda', component: AgendaPage },
     { path: '/admin/login', name: 'AdminLogin', component: AdminLogin },
