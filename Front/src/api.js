@@ -1,17 +1,25 @@
 const API_BASE = '/api'
 
 async function request(path, options) {
+  const token = localStorage.getItem('admin_token')
   const res = await fetch(`${API_BASE}${path}`, {
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
+    },
     ...options,
   })
   if (!res.ok) {
+    if (res.status === 401) localStorage.removeItem('admin_token')
     const body = await res.json().catch(() => ({}))
     throw new Error(body.error || `Request failed: ${res.status}`)
   }
   if (res.status === 204) return null
   return res.json()
 }
+
+export const login = (email, password) =>
+  request('/auth/login', { method: 'POST', body: JSON.stringify({ email, password }) })
 
 export const getSessions = () => request('/sessions')
 export const createSession = (session) =>

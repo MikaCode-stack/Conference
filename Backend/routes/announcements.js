@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import { ObjectId } from 'mongodb'
 import { connectDB } from '../db.js'
+import { requireAuth } from '../middleware/requireAuth.js'
 
 const router = Router()
 
@@ -10,7 +11,7 @@ router.get('/', async (req, res) => {
   res.json(announcements)
 })
 
-router.post('/', async (req, res) => {
+router.post('/', requireAuth, async (req, res) => {
   const { variant, message, visible } = req.body
   if (!variant || !message) {
     return res.status(400).json({ error: 'variant and message are required' })
@@ -22,7 +23,7 @@ router.post('/', async (req, res) => {
   res.status(201).json({ _id: result.insertedId, ...doc })
 })
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', requireAuth, async (req, res) => {
   const { id } = req.params
   if (!ObjectId.isValid(id)) {
     return res.status(400).json({ error: 'invalid id' })
@@ -48,7 +49,7 @@ router.put('/:id', async (req, res) => {
   res.json(announcement)
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', requireAuth, async (req, res) => {
   const { id } = req.params
   if (!ObjectId.isValid(id)) {
     return res.status(400).json({ error: 'invalid id' })

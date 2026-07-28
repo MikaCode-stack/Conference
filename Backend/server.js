@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url'
 import { connectDB } from './db.js'
 import sessionsRouter from './routes/sessions.js'
 import announcementsRouter from './routes/announcements.js'
+import authRouter from './routes/auth.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -15,6 +16,7 @@ const PORT = process.env.PORT || 3000
 app.use(cors())
 app.use(express.json())
 
+app.use('/api/auth', authRouter)
 app.use('/api/sessions', sessionsRouter)
 app.use('/api/announcements', announcementsRouter)
 

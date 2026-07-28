@@ -14,7 +14,7 @@ import {
 const sessions = ref([])
 const announcements = ref([])
 
-const newSession = ref({ time: '', title: '', speaker: '', location: '', tag: '' })
+const newSession = ref({ day: '', time: '', title: '', speaker: '', location: '', tag: '' })
 const newAnnouncement = ref({ variant: 'live', message: '', visible: false })
 
 async function loadSessions() {
@@ -32,12 +32,13 @@ onMounted(() => {
 
 async function addSession() {
   await createSession(newSession.value)
-  newSession.value = { time: '', title: '', speaker: '', location: '', tag: '' }
+  newSession.value = { day: '', time: '', title: '', speaker: '', location: '', tag: '' }
   await loadSessions()
 }
 
 async function saveSession(session) {
   await updateSession(session._id, {
+    day: session.day,
     time: session.time,
     title: session.title,
     speaker: session.speaker,
@@ -84,6 +85,12 @@ async function removeAnnouncement(id) {
 
       <form class="mb-4 flex flex-wrap gap-2" @submit.prevent="addSession">
         <input
+          v-model="newSession.day"
+          type="date"
+          required
+          class="rounded border border-gray-200 px-2 py-1 text-sm dark:border-gray-800 dark:bg-gray-900"
+        />
+        <input
           v-model="newSession.time"
           placeholder="Time (e.g. 09:00)"
           required
@@ -124,6 +131,11 @@ async function removeAnnouncement(id) {
             <th
               class="border-b border-gray-200 p-2 text-left font-medium text-violet-700 dark:border-gray-800 dark:text-violet-400"
             >
+              Day
+            </th>
+            <th
+              class="border-b border-gray-200 p-2 text-left font-medium text-violet-700 dark:border-gray-800 dark:text-violet-400"
+            >
               Time
             </th>
             <th
@@ -151,6 +163,13 @@ async function removeAnnouncement(id) {
         </thead>
         <tbody>
           <tr v-for="session in sessions" :key="session._id">
+            <td class="border-b border-gray-200 p-2 dark:border-gray-800">
+              <input
+                v-model="session.day"
+                type="date"
+                class="w-full rounded border border-gray-200 px-2 py-1 text-sm dark:border-gray-800 dark:bg-gray-900"
+              />
+            </td>
             <td class="border-b border-gray-200 p-2 dark:border-gray-800">
               <input
                 v-model="session.time"
