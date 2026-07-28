@@ -58,12 +58,12 @@ const progress = computed(() => {
       Schedule
     </h2>
 
-    <div v-if="days.length" class="mb-6 flex gap-3">
+    <div v-if="days.length" class="mb-6 flex gap-3 overflow-x-auto pb-1">
       <button
         v-for="day in days"
         :key="day"
         type="button"
-        class="flex-1 rounded-xl px-4 py-3 text-center transition"
+        class="shrink-0 basis-32 rounded-xl px-4 py-3 text-center transition sm:flex-1"
         :class="
           day === activeDay
             ? 'bg-violet-600 text-white'
@@ -89,13 +89,15 @@ const progress = computed(() => {
       </div>
     </template>
 
-    <ul class="flex flex-col gap-3">
-      <AgendaRow
-        v-for="(session, index) in sessionsForActiveDay"
-        :key="session._id"
-        :session="session"
-        :status="statusFor(index)"
-      />
-    </ul>
+    <div class="max-h-[65vh] overflow-y-auto pr-1">
+      <ul class="flex flex-col gap-3">
+        <AgendaRow
+          v-for="(session, index) in sessionsForActiveDay"
+          :key="session._id"
+          :session="session"
+          :status="statusFor(index)"
+        />
+      </ul>
+    </div>
   </section>
 </template>

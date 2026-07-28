@@ -42,13 +42,13 @@ function logout() {
     <div class="flex gap-4">
       <RouterLink
         to="/"
-        class="font-medium text-violet-700 hover:text-violet-600 dark:text-violet-400 dark:hover:text-violet-300"
+        class="font-medium text-primary hover:text-secondary dark:text-primary dark:hover:text-secondary"
       >
         Agenda
       </RouterLink>
       <RouterLink
         to="/admin"
-        class="font-medium text-violet-700 hover:text-violet-600 dark:text-violet-400 dark:hover:text-violet-300"
+        class="font-medium text-primary hover:text-secondary dark:text-primary dark:hover:text-secondary"
       >
         Admin
       </RouterLink>

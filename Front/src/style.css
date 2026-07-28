@@ -5,6 +5,11 @@
 @theme {
   --font-sans: 'Noto Sans', ui-sans-serif, system-ui, sans-serif;
   --font-heading: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+
+  --color-white: #FFFFFF;
+  --color-primary: #5C318C;
+  --color-secondary: #2654A1;
+  --color-accent: #D01869;
 }
 
 :root {
